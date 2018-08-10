@@ -1,33 +1,32 @@
-        .....                                                ..
-     .H8888888h.  ~-.                                  . uW8"
-     888888888888x  `>        u.      ..    .     :    `t888
-    X~     `?888888hx~  ...ue888b   .888: x888  x888.   8888   .
-    '      x8.^"*88*"   888R Y888r ~`8888~'888X`?888f`  9888.z88N
-     `-:- X8888x        888R I888>   X888  888X '888>   9888  888E
-          488888>       888R I888>   X888  888X '888>   9888  888E
-        .. `"88*        888R I888>   X888  888X '888>   9888  888E
-      x88888nX"      . u8888cJ888    X888  888X '888>   9888  888E
-     !"*8888888n..  :   "*888*P"    "*88%""*88" '888!` .8888  888"
-    '    "*88888888*      'Y"         `~    "    `"`    `%888*%"
-            ^"***"`                                        "`
+<a href="https://www.dyne.org/software/tomb">
+	<img src="https://raw.githubusercontent.com/dyne/Tomb/master/extras/images/tomb_and_bats.png"
+       align="right" height="200"/>
+</a>
 
-*A minimalistic commandline tool to manage encrypted volumes* aka **The Crypto Undertaker**
+Tomb
+================================================================
 
-[![software by Dyne.org](https://www.dyne.org/wp-content/uploads/2015/12/software_by_dyne.png)](http://www.dyne.org)
+[![][travis-badge]][travis-link]
+[![][codacy-badge]][codacy-link]
+[![][release-badge]][release-link]
+[![][irc-badge]][irc-link]
 
-More information and updates on website: https://www.dyne.org/software/tomb
+> Lead Maintainer: [jaromil][jaromil-link]
 
-Get the stable .tar.gz signed release for production use!
+**A minimalistic commandline tool to manage encrypted volumes aka The Crypto Undertaker**
 
-Download it from https://files.dyne.org/tomb
+<a href="https://www.dyne.org">
+  <img src="https://zenroom.dyne.org/img/software_by_dyne.png"
+       alt="Software by Dyne" align="right" height="75" />
+</a>
 
-For the instructions on how to get started using Tomb, see [INSTALL](INSTALL.md).
+* **[Official Website][tomb]**
+* **[Signed release for production use][release]**
+* **[Installation instructions][install]**
 
-![tomb's logo](https://github.com/dyne/Tomb/blob/master/extras/images/monmort.png)
 
-[![Build Status](https://travis-ci.org/dyne/Tomb.svg?branch=master)](https://travis-ci.org/dyne/Tomb)
 
-# What is Tomb, the crypto undertaker?
+# ![MM] What is Tomb, the crypto undertaker?
 
 Tomb aims to be a free and open source system for easy encryption and
 backup of personal files, written in code that is easy to review and
@@ -44,7 +43,7 @@ standard filesystem tools (GNU) and the cryptographic API of the Linux
 kernel (cryptsetup and LUKS). Tomb can also produce machine parsable
 output to facilitate its use inside graphical applications.
 
-# How does it work?
+# ![MM] How does it work?
 
 To create a Tomb, do:
 ```
@@ -110,11 +109,11 @@ or if you are in a hurry
 
    -h     print this help
    -v     print version, license and list of available ciphers
-   -q     run quietly without printing informations
+   -q     run quietly without printing information
    -D     print debugging information at runtime
 ```
 
-# What is this for, exactly?
+# ![MM] What is this for, exactly?
 
 This tool can be used to dig .tomb files (LUKS volumes), forge keys
 protected by a password (GnuPG encryption) and use the keys to lock
@@ -125,18 +124,20 @@ Once open, the tombs are just like normal folders and can contain
 different files, plus they offer advanced functionalities like bind
 and execution hooks and fast search, or they can be slammed close even
 if busy. Keys can be stored on separate media like USB sticks, NFC,
-on-line SSH servers or bluetooth devices to make the transport of data
+on-line SSH servers or Bluetooth devices to make the transport of data
 safer: one always needs both the tomb and the key, plus its password,
 to access it.
 
 The tomb script takes care of several details to improve user's
-behaviour and the security of tombs in everyday usage: protects the
-typing of passwords from keyloggers, facilitates hiding keys inside
-images, indexes and search a tomb's contents, mounts directories in
-place, lists open tombs and selectively closes them, warns the user
-about free space and last time usage, etc.
+behaviour and the security of tombs in everyday usage such as:
+* protects the typing of passwords from keyloggers,
+* facilitates hiding keys inside images,
+* indexes and search a tomb's contents,
+* mounts directories in place,
+* lists open tombs and selectively closes them,
+* warns the user about free space and last time usage.
 
-# How secure is this?
+# ![MM] How secure is this?
 
 Death is the only sure thing in life. That said, Tomb is a pretty
 secure tool especially because it is kept minimal, its source is
@@ -145,13 +146,13 @@ read with a bit of shell script knowledge.
 
 All encryption tools being used in Tomb are included as default in
 many GNU/Linux operating systems and therefore are regularly peer
-reviewed: we don't add anything else to them really, just a layer of
+reviewed: we do not add anything else to them really, just a layer of
 usability.
 
 The file [KNOWN_BUGS.md](KNOWN_BUGS.md) contains some notes on known
 vulnerabilities and threat model analysis.
 
-In absence or malfunction of the Tomb script it is always possible to
+In absence or malfunction of the Tomb script, it is always possible to
 access the contents of a Tomb only using a dm-crypt enabled Linux
 kernel, cryptsetup, GnuPG and any shell interpreter issuing the
 following commands as root:
@@ -170,7 +171,7 @@ umount /mnt
 cryptsetup luksClose /dev/mapper/secret
 ```
 
-# Stage of development
+# ![MM] Stage of development
 
 Tomb is an evolution of the 'mknest' tool developed for the
 [dyne:bolic](http://www.dynebolic.org) 100% Free GNU/Linux
@@ -198,7 +199,10 @@ some are developed by Dyne.org, but some also by third parties.
 - [qt-tray](extras/qt-tray) is a graphical tray icon for QT panels
 - [tomber](extras/tomber) is a wrapper to use Tomb in Python scripts
 
-![skulls and pythons](https://github.com/dyne/Tomb/blob/master/extras/images/python_for_tomb.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dyne/Tomb/master/extras/images/python_for_tomb.png"
+       alt="skulls and pythons">	    
+</p>
 
 ### External applications
 
@@ -208,8 +212,7 @@ some are developed by Dyne.org, but some also by third parties.
 
 - [Mausoleum](https://github.com/mandeep/Mausoleum) is a graphical interface to facilitate the creation and management of tombs, written in Python.
 
-
-- [pass-tomb](https://github.com/roddhjav/pass-tomb) is a console based wrapper of the excellent password keeping program [pass](https://www.passwordstore.org) that helps to keep the whole tree of password encrypted inside a tomb. It is written in Bash.
+- [pass-tomb](https://github.com/roddhjav/pass-tomb) is a console extension of the excellent password keeping program [pass](https://www.passwordstore.org) that helps to keep the whole tree of password encrypted inside a tomb. It is written in Bash.
 
 If you are writing a project supporting tomb volumes or wrapping tomb, let us know!
 
@@ -241,11 +244,11 @@ Any help on further verification of compliancy is very welcome, as the
 access to ISO/IEC document is limited due to its expensive nature.
 
 
-# Use stable releases in production!
+# ![MM] Use stable releases in production!
 
 Anyone planning to use Tomb to store and access secrets should not use
-the latest development version in Git, but use instead the .tar.gz
-release on https://files.dyne.org/tomb . The stable version will
+the latest development version in Git, but use the .tar.gz
+release on https://files.dyne.org/tomb instead. The stable version will
 always ensure backward compatibility with older tombs: we make sure it
 creates sane tombs and keys by running various tests before releasing
 it. The development version in Git might introduce sudden bugs and is
@@ -253,13 +256,16 @@ not guaranteed to produce backward- or forward-compatible tombs and keys.
 The development version in Git should be used to report bugs, test new
 features and develop patches.
 
-So be warned: do not use the latest Git version in production
+**So be warned:** do not use the latest Git version in production
 environments, but use a stable release versioned and packed as
 tarball on https://files.dyne.org/tomb
 
-![Day of the dead](https://github.com/dyne/Tomb/blob/master/extras/images/DayOfTheDead.jpg)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dyne/Tomb/master/extras/images/DayOfTheDead.jpg"
+       alt="Day of the dead">	    
+</p>
 
-# How can you help
+# ![MM] How can you help
 
 Donations are very welcome, please go to https://www.dyne.org/donate
 
@@ -278,7 +284,7 @@ coding style are illustrated in [doc/HACKING.txt](doc/HACKING.txt).
 Tomb's developers can be contacted using the issues on GitHub or over
 IRC on https://irc.dyne.org channel **#dyne** (or direct port 9999 SSL)
 
-# Licensing
+# ![MM] Licensing
 
 Tomb is Copyright (C) 2007-2018 by the Dyne.org Foundation and
 maintained by Denis Roio <jaromil@dyne.org>. More information on all
@@ -297,3 +303,18 @@ to the GNU Public License for more details.
 You should have received a copy of the GNU Public License along with
 this source code; if not, write to: Free Software Foundation, Inc.,
 675 Mass Ave, Cambridge, MA 02139, USA.
+
+[tomb]: https://www.dyne.org/software/tomb
+[release]: https://files.dyne.org/tomb
+[install]: INSTALL.md
+[MM]: https://raw.githubusercontent.com/dyne/Tomb/master/extras/images/monmort.png
+
+[travis-badge]: https://img.shields.io/travis/dyne/Tomb/master.svg?style=flat-square
+[travis-link]: https://travis-ci.org/dyne/Tomb
+[codacy-badge]: https://img.shields.io/codacy/grade/ea6cb4eb6f0e4520a1271d29c7875891/master.svg?style=flat-square
+[codacy-link]: https://www.codacy.com/app/roddhjav/Tomb
+[release-badge]: https://img.shields.io/github/tag/dyne/Tomb.svg?maxAge=600&style=flat-square
+[release-link]: https://files.dyne.org/tomb
+[irc-badge]: https://img.shields.io/badge/irc.dyne.org-%23dyne-blue.svg?style=flat-square
+[irc-link]: https://irc.dyne.org/?channels=dyne
+[jaromil-link]: https://jaromil.dyne.org/
